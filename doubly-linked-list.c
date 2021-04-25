@@ -209,6 +209,9 @@ int deleteLast(headNode* h) {
             prevNode = delNode;
             delNode = delNode -> llink;
         }
+        free(delNode);
+        prevNode -> llink = NULL;
+    }
 }
 
 

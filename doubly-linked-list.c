@@ -201,7 +201,14 @@ int deleteLast(headNode* h) {
 		free(h -> first);
 		h -> first = NULL;
 	return 0;
-	}	
+	}
+	 else {                //리스트에 노드가 2개 이상인 경우
+        prevNode = h -> first;
+        delNode = h -> first -> llink;
+        while(delNode -> llink != NULL) {
+            prevNode = delNode;
+            delNode = delNode -> llink;
+        }
 }
 
 

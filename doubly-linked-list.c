@@ -265,7 +265,19 @@ int invertList(headNode* h) {
 
 /* 리스트를 검색하여, 입력받은 key보다 큰값이 나오는 노드 바로 앞에 삽입 */
 int insertNode(headNode* h, int key) {
-
+        listNode* newNode;
+	newNode = (listNode*)malloc(sizeof(listNode));
+	if(h -> first == NULL){
+		newNode -> rlink = NULL;
+		newNode -> llink = NULL;
+		h -> first = newNode;
+	}
+	else{
+		newNode -> rlink;
+		newNode -> llink;
+        if(newNode -> rlink != NULL)
+		newNode -> rlink -> llink = newNode;
+	}
 	return 0;
 }
 
@@ -274,7 +286,7 @@ int insertNode(headNode* h, int key) {
  * list에서 key에 대한 노드 삭제
  */
 int deleteNode(headNode* h, int key) {
-
+        if(h -> first == NULL)
 	return 1;
 }
 

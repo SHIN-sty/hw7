@@ -243,7 +243,21 @@ int deleteFirst(headNode* h) {
  * 리스트의 링크를 역순으로 재 배치
  */
 int invertList(headNode* h) {
+        listNode* p;
+	listNode* q;
+	listNode* r;
 
+	p = h -> first;
+	q = NULL;
+	r = NULL;
+
+	while (p !=NULL){
+		r = q;
+		q = p;
+		p = p -> llink;
+		q -> llink = r;
+	}
+	h -> first = q;
 	return 0;
 }
 
